@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+
+
+body {
+    overflow: hidden;
+    /* Impede a barra de rolagem */
+    background-image: url(./);
+    background-repeat: no-repeat;
+    /* Impede a duplicação da imagem */
+    background-size: cover;
+    /* Faz a imagem cobrir todo o fundo */
+    background-position: center;
+    /* Centraliza a imagem */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    /* 100% da largura da tela */
+    height: 100vh;
+    /* 100% da altura da tela */
+    padding: 20px 80px;
+
+}
+
+.conteudo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+    /* Adiciona uma altura mínima para o conteúdo */
+    justify-content: space-between;
+
+}
+
+.texto {
+    width: 100%;
+    max-width: 600px;
+    /* Define uma largura máxima, mas permite que diminua */
+}
+
+h2 {
+    color: #333333;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+span {
+    color: #017143;
+    font-size: 70px;
+    font-weight: 900;
+}
+
+p {
+    font-size: 16px;
+    color: #414141;
+}
+
+button {
+    background-color: #017143;
+    color: #ffff;
+    border-radius: 40px;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #0f5538;
+}
+
+.imagem {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 80px;
+    position: absolute;
+    /* Posição absoluta em relação ao <main> */
+}
+
+.botao-menu {
+    width: 60px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.botao-menu:hover {
+    transform: translateY(-30px);
+}
+
+.imagem-copo {
+    /* margin-top: 220px; -> Removido para melhor responsividade */
+    width: 400px;
+    z-index: 2;
+    /* Garante que o copo fique na frente do círculo */
+}
+
+.circulo {
+    background-color: #017143;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    clip-path: circle(600px at right 800px);
+    z-index: -1;
+}
+
+/* --- Início da Media Query para telas de até 1280px --- */
+@media (max-width: 1280px) {
+    .imagem-copo {
+        width: 350px;
+    }
+
+    .circulo {
+        clip-path: circle(550px at right 750px);
+    }
+}
+
+/* --- Início da Media Query para telas de 1280px ou maiores --- */
+@media (min-width: 1280px) {
+    .conteudo {
+        align-items: center;
+        padding-top: 150px;
+        /* Desloca o texto e o copo para baixo */
+    }
+
+    .imagem {
+        align-items: center;
+        /* Ajuda a centralizar o copo verticalmente */
+        padding-right: 50px;
+        /* Move o copo um pouco para a esquerda, para dentro do círculo */
+    }
+}
+
+/* --- Início da Media Query para telas menores --- */
+
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+        /* Permite rolagem vertical em telas pequenas */
+        background-color: #ddbebe;
+    }
+
+    main {
+        height: auto;
+        /* Altura automática para caber o conteúdo */
+        padding: 20px 40px;
+        align-items: center;
+    }
+
+    .logo {
+        position: static;
+        /* Remove o posicionamento absoluto para centralizar */
+        margin-top: 20px;
+        /* Adiciona margem no topo */
+        margin-bottom: 20px;
+        /* Adiciona margem abaixo do logo */
+    }
+
+    .conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imagem {
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .imagem-copo {
+        width: 80%;
+        max-width: 300px;
+        margin-top: 0;
+        /* Remove a margem superior fixa */
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    span {
+        font-size: 50px;
+        color: #eeeeee;
+    }
+
+    p {
+        color: #000;
+        /* Altera a cor do texto para preto */
+    }
+
+    .menu {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .circulo {
+        clip-path: circle(300px at center 70%);
+        /* Ajusta o círculo para ficar mais próximo do copo */
+    }
+
+    button {
+        background-color: #fdfdfd;
+        color: #000000;
+        border-radius: 40px;
+        border: none;
+        padding: 10px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    button:hover {
+        background-color: #242424;
+        color: aliceblue;
+    }
+
+
+
+}
